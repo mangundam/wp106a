@@ -1,13 +1,61 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Hello World!</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    We are using node <script>document.write(process.versions.node)</script>,
-    Chrome <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
-  </body>
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>視窗程式設計</title>
+</head>
+<body>
+<style>
+    h1{text-align: center;}
+    h3{text-align: center;}
+    .subtitle{text-align: center;border: 2px solid black;padding: 0;font-size: 36px;
+        width: 60%;margin: 0 auto}
+    .subcontent{font-size: 36px;margin:51px auto;}
+    .subcontentlink{font-size: 36px;margin-bottom: 80px;width: 60%;text-align:center;
+        margin:51.5px auto}
+    .subcontentlink:hover{color: #1111CC;border: 3px solid #1111CC;width: 60%;
+        text-align: center;margin: 48.5px auto}
+    a{color: #000077;text-decoration: none;}
+    .page{border: 0px solid #888888;margin:0 auto;width: 80%;height: 500px;}
+    td{border: 1px solid #000000;margin: 0 auto;}
+    tr{border: 1px solid green;margin: 0 auto}
+    table{margin: 0 auto;text-align: center;font-size: 30px}
+    .maincontent{float: left;width: 50%;margin:1px auto;
+        text-align: center;border: 0px solid red}
+    .name{font-size: 42px}
+</style>
+<div class="page">
+    <h1>課程資訊</h1>
+    <div class="maincontent">
+    <h2 class="subtitle">地點</h2>
+<h3 class="subcontent">E22嵌入式實驗室</h3>
+    <h2 class="subtitle">老師</h2>
+<h3 class="subcontent"><div class="name">陳鍾誠</div></h3>
+    </div>
+    <div class="maincontent">
+   <h2 class="subtitle">課程網址</h2>
+<a href="https://github.com/cccnqu/wp106a"><h3 class="subcontentlink">GitHub</h3></a>
+    <h2 class="subtitle">時間</h2>
+    <table>
+        <tr>
+            <td style="border: 0px solid #ffffff"></td>
+            <td style="">星期四</td>
+        </tr>
+        <tr>
+            <td>第五節<br>13:30~14:20</td>
+            <td>視窗程式</td>
+        </tr>
+        <tr>
+            <td>第六節<br>14:30~15:20</td>
+            <td>視窗程式</td>
+        </tr>
+        <tr>
+            <td>第七節<br>15:30~16:20</td>
+            <td>視窗程式</td>
+        </tr>
+    </table>
+    </div>
+</div>
+</body>
 </html>
