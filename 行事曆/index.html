@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        iframe{width:920px;height: 260px}
+        button{font-size: 30px}
+    </style>
+</head>
+<body>
+<h1 class="timme">Mon Oct 01 2017 00:00:00 GMT+0800 (台北標準時間)</h1><button onclick="neww()">NEW!!</button><br>
+<b class="frameclock"><iframe src="clock.html"></iframe></b>
+
+</body>
+<script>window.$ = window.jQuery = require('jquery');</script>
+<script>window.$ = window.jQuery = require('./jquery-3.2.1.min.js');</script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script>
+    function neww() {
+        for(var i=0;i<1;i++){
+	         var url = 'clock.html';
+	          $('body').append('<div id="div_'+i+'" style="width:920px;height:260px"><iframe id="ifm_'+i+'" src="'+url+'" /></div>');
+	    }
+    }
+
+</script>
+<script>
+    var timee=document.getElementsByClassName("timme");
+    var uv=setTimeout("nowtimeupdate()",100);
+    var z=document.getElementsByClassName("timme").length;
+    function nowtimeupdate() {
+        var secondtime=new Date();
+        timee[z-1].innerHTML=secondtime;
+        var ux=setTimeout("nowtimeupdate()",100);
+    }
+</script>
+</html>

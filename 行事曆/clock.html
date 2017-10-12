@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title>定時器</title>
+    <style>
+        input{font-size: 30px;}
+        button{font-size: 30px;}
+        .timeandleft{float: left;height: 200px;text-align: center}
+        .timeandleft2{float: left;padding: 50px 0 0 80px}
+        .timeandleft3{float: left;padding: 0px 0 0 80px}
+        .clock{border: 1px black solid;height: 200px;width: 900px}
+    </style>
+</head>
+<body>
+
+
+<div class="clock">
+<input type="date" class="wantdate" value="2017-01-01"><input type="time" class="wantdatetime" value="00:00">
+<br>
+<div class="timeandleft">
+<h1>定時命名</h1>
+<input type="text" value="定時" class="clockname"></div>
+
+<div class="timeandleft2">
+<button onclick="timleft()">START!</button>
+</div>
+<div class="timeandleft3">
+<h1>剩餘時間</h1>
+<h1 class="timeleft"></h1>
+</div>
+</div>
+
+
+
+</body>
+<script>
+    var uv=setTimeout("nowtimeupdate()",100);
+    var z=document.getElementsByClassName("timme").length;
+    function nowtimeupdate() {
+        var secondtime=new Date();
+        var ux=setTimeout("nowtimeupdate()",100);
+    }
+</script>
+<script>
+    var wanttimesecond;
+    var y="";
+    var lefttime=document.getElementsByClassName("timeleft");
+    var lefttimelength=document.getElementsByClassName("timeleft").length;
+    var nowtime;
+    var u=setTimeout("timeupdate()",100);
+    var clocname=document.getElementsByClassName("clockname");
+    var clocnamelength=document.getElementsByClassName("clockname").length;
+    function timeupdate() {
+            nowtime=(+new Date());
+        var u=setTimeout("timeupdate()",100);
+    }
+    function timleft() {
+        var want=document.getElementsByClassName("wantdate");
+        var wantlength=document.getElementsByClassName("wantdate").length;
+        var wantime=document.getElementsByClassName("wantdatetime");
+        var wantimelength=document.getElementsByClassName("wantdatetime").length;
+        var x=want[wantlength-1].value+" "+wantime[wantimelength-1].value;
+        y=x.replace(/-/g,"/");
+        wanttimesecond=(+new Date(y));
+        if(wanttimesecond-nowtime<=-1000){alert("已過期!");}
+        else if(wanttimesecond-nowtime>=1){
+            var ua=setTimeout("countdown()",100);
+        }
+    }
+    function countdown() {
+        if(wanttimesecond-nowtime>=2){
+            var uu=setTimeout("countdown()",100);
+            lefttime[lefttimelength-1].innerHTML=wanttimesecond-nowtime;
+        }
+        if(wanttimesecond-nowtime<=1){alert(clocname[clocnamelength-1].value);}
+    }
+</script>
+</html>
